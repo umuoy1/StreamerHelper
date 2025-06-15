@@ -7,5 +7,3 @@ const sysFree = os.freemem();
 const sysTotal = os.totalmem();
 
 export const memoryInfo = `系统内存占用率: ${1 - sysFree / sysTotal}, 堆内存占用率: ${heapUsed / heapTotal},  Node占用系统内存的比例: ${rss / sysTotal}`;
-
-

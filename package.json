@@ -5,9 +5,10 @@
   "scripts": {
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "watch": "tsc -w --project tsconfig.json && tsc-alias -w -p tsconfig.json",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
     "serve": "npm run build && pm2 start ./dist/index.js",
-    "dev": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json && node ./dist/index.js"
+    "dev": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json && node ./dist/index.js",
+    "lint": "prettier --check \"src/**/*.{ts,js,json}\"",
+    "lint:fix": "prettier --write \"src/**/*.{ts,js,json}\""
   },
   "repository": {
     "type": "git",
@@ -37,9 +38,12 @@
     "uuid": "^8.3.0"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.42",
     "@types/node": "^16.18.96",
     "@types/node-rsa": "^1.1.0",
     "@types/nodemailer": "^6.4.4",
+    "@typescript-eslint/parser": "^6.0.0",
+    "prettier": "^3.0.0",
     "tsc-alias": "^1.2.6",
     "typescript": "^5.4.5"
   }
